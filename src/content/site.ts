@@ -102,6 +102,158 @@ export const services = {
   ],
 } as const;
 
+/**
+ * Showcase figures and case details.
+ * Every TODO string is a placeholder for Anatolii to replace.
+ * None of these values are measured outcomes.
+ */
+export const showcase = {
+  id: "showcase",
+  heading: "Showcase",
+  labels: {
+    context: "Context",
+    work: "What we did",
+    result: "Result",
+    /** Visible marker so a result cannot be read as a real outcome. */
+    placeholder: "Placeholder",
+    role: "Role",
+    region: "Region",
+    timeToOffer: "Time to offer",
+  },
+  stats: [
+    {
+      id: "placements-made",
+      label: "Placements made",
+      /** TODO: Anatolii will replace the placements-made metric. */
+      value: "TODO",
+    },
+    {
+      id: "platforms-supported",
+      label: "Platforms supported",
+      /** TODO: Anatolii will replace the platforms-supported metric. */
+      value: "TODO",
+    },
+    {
+      id: "years-of-experience",
+      label: "Years of experience",
+      /** TODO: Anatolii will replace the years-of-experience metric. */
+      value: "TODO",
+    },
+  ],
+  platformGroup: {
+    id: "showcase-platforms",
+    heading: "AI training platforms",
+    /** Specified grouping. Not a description of work performed. */
+    engagement: "AI training platform engagement",
+    cards: [
+      {
+        id: "dataannotation",
+        name: "DataAnnotation",
+        /** TODO: Anatolii will replace the context for the DataAnnotation engagement. */
+        context: "TODO",
+        /** TODO: Anatolii will replace what was done on the DataAnnotation engagement. */
+        work: "TODO",
+        /** TODO: Anatolii will replace the measurable result for the DataAnnotation engagement. */
+        result: "TODO",
+      },
+      {
+        id: "snorkel-ai",
+        name: "Snorkel AI",
+        /** TODO: Anatolii will replace the context for the Snorkel AI engagement. */
+        context: "TODO",
+        /** TODO: Anatolii will replace what was done on the Snorkel AI engagement. */
+        work: "TODO",
+        /** TODO: Anatolii will replace the measurable result for the Snorkel AI engagement. */
+        result: "TODO",
+      },
+      {
+        id: "platform-placeholder-1",
+        /** TODO: Anatolii will replace this platform name. */
+        name: "TODO: platform name",
+        /** TODO: Anatolii will replace the context for this platform engagement. */
+        context: "TODO",
+        /** TODO: Anatolii will replace what was done on this platform engagement. */
+        work: "TODO",
+        /** TODO: Anatolii will replace the measurable result for this platform engagement. */
+        result: "TODO",
+      },
+      {
+        id: "platform-placeholder-2",
+        /** TODO: Anatolii will replace this platform name. */
+        name: "TODO: platform name",
+        /** TODO: Anatolii will replace the context for this platform engagement. */
+        context: "TODO",
+        /** TODO: Anatolii will replace what was done on this platform engagement. */
+        work: "TODO",
+        /** TODO: Anatolii will replace the measurable result for this platform engagement. */
+        result: "TODO",
+      },
+    ],
+  },
+  placementGroup: {
+    id: "showcase-placements",
+    heading: "Job placement",
+    cards: [
+      {
+        id: "us-market",
+        market: "US market",
+        /** TODO: Anatolii will replace the client name for the US market placement. */
+        name: "TODO: client name",
+        /** TODO: Anatolii will replace the role for the US market placement. */
+        role: "TODO",
+        /** TODO: Anatolii will replace the region for the US market placement. */
+        region: "TODO",
+        /** TODO: Anatolii will replace the time to offer for the US market placement. */
+        timeToOffer: "TODO",
+        /** TODO: Anatolii will replace the context for the US market placement. */
+        context: "TODO",
+        /** TODO: Anatolii will replace what was done for the US market placement. */
+        work: "TODO",
+        /** TODO: Anatolii will replace the measurable result for the US market placement. */
+        result: "TODO",
+      },
+      {
+        id: "other-market-1",
+        /** TODO: Anatolii will replace this market name. */
+        market: "TODO: market",
+        /** TODO: Anatolii will replace the client name for this placement. */
+        name: "TODO: client name",
+        /** TODO: Anatolii will replace the role for this placement. */
+        role: "TODO",
+        /** TODO: Anatolii will replace the region for this placement. */
+        region: "TODO",
+        /** TODO: Anatolii will replace the time to offer for this placement. */
+        timeToOffer: "TODO",
+        /** TODO: Anatolii will replace the context for this placement. */
+        context: "TODO",
+        /** TODO: Anatolii will replace what was done for this placement. */
+        work: "TODO",
+        /** TODO: Anatolii will replace the measurable result for this placement. */
+        result: "TODO",
+      },
+      {
+        id: "other-market-2",
+        /** TODO: Anatolii will replace this market name. */
+        market: "TODO: market",
+        /** TODO: Anatolii will replace the client name for this placement. */
+        name: "TODO: client name",
+        /** TODO: Anatolii will replace the role for this placement. */
+        role: "TODO",
+        /** TODO: Anatolii will replace the region for this placement. */
+        region: "TODO",
+        /** TODO: Anatolii will replace the time to offer for this placement. */
+        timeToOffer: "TODO",
+        /** TODO: Anatolii will replace the context for this placement. */
+        context: "TODO",
+        /** TODO: Anatolii will replace what was done for this placement. */
+        work: "TODO",
+        /** TODO: Anatolii will replace the measurable result for this placement. */
+        result: "TODO",
+      },
+    ],
+  },
+} as const;
+
 export const areaServed = "United States";
 
 /**
