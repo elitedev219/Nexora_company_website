@@ -1,5 +1,6 @@
 "use client";
 
+import { BookingPanel } from "@/components/sections/booking-panel";
 import { contact, getBookingUrl } from "@/content/site";
 import {
   realEmailAddress,
@@ -35,7 +36,9 @@ export function Contact() {
 
         <div className="mt-14 grid gap-16 lg:grid-cols-12 lg:gap-12">
           <Reveal className="lg:col-span-7">
-            <h3 className="text-2xl font-medium tracking-tight text-ink">{contact.booking.heading}</h3>
+            <h3 id="booking-heading" className="text-2xl font-medium tracking-tight text-ink">
+              {contact.booking.heading}
+            </h3>
             {bookingUrl ? (
               <iframe
                 title={contact.booking.iframeTitle}
@@ -44,9 +47,7 @@ export function Contact() {
                 loading="lazy"
               />
             ) : (
-              <p className="mt-6 border border-line px-8 py-10 font-mono text-sm text-ink">
-                {contact.booking.missing}
-              </p>
+              <BookingPanel />
             )}
           </Reveal>
 
