@@ -1,12 +1,13 @@
-import { hero, siteName } from "@/content/site";
+import { Logo } from "@/components/logo";
+import { hero } from "@/content/site";
 
 export function Hero() {
   return (
     <section aria-labelledby="hero-heading" className="px-5 sm:px-8">
       <div className="mx-auto flex min-h-[calc(100svh-4rem)] max-w-6xl flex-col justify-center py-16 sm:py-24">
-        <p className="rise font-mono text-[0.8125rem] font-medium tracking-[0.22em] text-ink">
-          {siteName}
-        </p>
+        <div className="rise">
+          <Logo variant="hero" />
+        </div>
         <div className="rise rise-delay-1 mt-8 h-px w-10 bg-accent" aria-hidden="true" />
         <h1
           id="hero-heading"
