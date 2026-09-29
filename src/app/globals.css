@@ -126,6 +126,98 @@ body {
   animation-delay: 210ms;
 }
 
+/* Later in the file so it wins over .rise when reduced motion is requested. */
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    animation: none;
+  }
+}
+
+/*
+ * Hero photo cluster. Two columns on large screens: a tall card over a square
+ * card, and a square card over a taller card. Small screens keep two photos.
+ * Photos stay photographic in dark mode.
+ */
+.hero-cluster {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.hero-cluster-col-a {
+  display: contents;
+}
+
+.hero-cluster-col-b {
+  display: none;
+}
+
+.hero-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.7rem;
+  aspect-ratio: 1;
+}
+
+.hero-photo {
+  filter: none;
+}
+
+html.dark .hero-photo {
+  filter: none;
+}
+
+@media (min-width: 1024px) {
+  .hero-cluster {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    max-width: 34rem;
+    margin-inline: auto;
+  }
+
+  .hero-cluster-col-a,
+  .hero-cluster-col-b {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .hero-cluster-col-a {
+    flex: 1.12;
+    align-items: flex-end;
+  }
+
+  .hero-cluster-col-b {
+    flex: 0.96;
+    align-items: flex-start;
+    margin-top: 2.5rem;
+  }
+
+  .hero-card-tall {
+    width: 100%;
+    aspect-ratio: 5 / 6;
+  }
+
+  .hero-card-square-a {
+    width: 68%;
+    aspect-ratio: 1;
+  }
+
+  .hero-card-square-b {
+    width: 76%;
+    aspect-ratio: 1;
+  }
+
+  .hero-card-taller {
+    width: 100%;
+    aspect-ratio: 5 / 7;
+  }
+}
+
 /* Light and dark lockups. Class theme wins; the media query covers no-JS. */
 .logo-lockup {
   display: inline-flex;
