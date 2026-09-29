@@ -52,10 +52,7 @@ export function Contact() {
           </Reveal>
 
           <div className="lg:col-span-5">
-            <Reveal>
-              <Channels />
-            </Reveal>
-            <Reveal className="mt-12" delayMs={80}>
+            <Reveal delayMs={80}>
               <ContactForm />
             </Reveal>
           </div>
