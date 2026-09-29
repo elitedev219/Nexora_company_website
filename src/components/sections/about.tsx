@@ -139,13 +139,14 @@ function VisionAndMission() {
   return (
     <div
       id="about-vision-mission"
-      className="mt-20 grid gap-10 sm:mt-24 lg:grid-cols-2 lg:items-start lg:gap-x-12 lg:gap-y-16"
+      className="mt-20 grid gap-10 sm:mt-24 lg:grid-cols-2 lg:items-center lg:gap-x-12 lg:gap-y-16"
     >
       <StatementCopy
         id={about.vision.id}
         heading={about.vision.heading}
         statement={about.vision.statement}
         delayMs={40}
+        className="lg:self-center"
       />
       <StatementPhoto image={about.vision.image} delayMs={80} />
       <StatementCopy
@@ -153,7 +154,7 @@ function VisionAndMission() {
         heading={about.mission.heading}
         statement={about.mission.statement}
         delayMs={110}
-        className="lg:order-1"
+        className="lg:order-1 lg:self-center"
       />
       <StatementPhoto image={about.mission.image} delayMs={150} />
     </div>
