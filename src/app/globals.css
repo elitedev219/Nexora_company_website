@@ -157,7 +157,7 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 0.7rem;
-  aspect-ratio: 1;
+  height: 7.25rem;
 }
 
 .hero-photo {
@@ -195,6 +195,10 @@ html.dark .hero-photo {
     flex: 0.96;
     align-items: flex-start;
     margin-top: 2.5rem;
+  }
+
+  .hero-card {
+    height: auto;
   }
 
   .hero-card-tall {

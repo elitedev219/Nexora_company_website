@@ -61,7 +61,7 @@ function HeroCluster() {
 export function Hero() {
   return (
     <section aria-labelledby="hero-heading" className="px-5 sm:px-8">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 py-16 sm:py-20 lg:min-h-[calc(100svh-4rem)] lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:content-center lg:gap-8 lg:py-16">
+      <div className="mx-auto grid max-w-6xl items-center gap-6 py-16 sm:py-20 lg:min-h-[calc(100svh-4rem)] lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:content-center lg:gap-8 lg:py-16">
         <div>
           <div className="rise">
             <Logo variant="hero" />
