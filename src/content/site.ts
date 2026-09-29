@@ -421,7 +421,7 @@ export const contact = {
        * TODO: Anatolii has not provided an email address.
        * Render this as text. Do not use a mailto: link until the value is a real address.
        */
-      value: "TODO: email",
+      value: "techtonic.innov@gmail.com",
     },
     telegram: {
       label: "Telegram",
@@ -429,7 +429,7 @@ export const contact = {
        * TODO: Anatolii has not provided a Telegram handle or URL.
        * Render this as text. Do not use a t.me link until the value is a real address.
        */
-      value: "TODO: telegram",
+      value: "+81 70 4134 7565",
     },
   },
   form: {
