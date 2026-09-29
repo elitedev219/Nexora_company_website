@@ -1,7 +1,8 @@
 "use client";
 
+import { Logo } from "@/components/logo";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { navLinks, siteName, ui } from "@/content/site";
+import { navLinks, ui } from "@/content/site";
 import { useEffect, useId, useRef, useState } from "react";
 
 export function Header() {
@@ -40,11 +41,8 @@ export function Header() {
   return (
     <header id="top" className="sticky top-0 z-40 border-b border-line bg-canvas">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
-        <a
-          href="#top"
-          className="font-mono text-[0.8125rem] font-medium tracking-[0.22em] text-ink"
-        >
-          {siteName}
+        <a href="#top" className="shrink-0">
+          <Logo variant="header" />
         </a>
         <nav aria-label={ui.primaryNavLabel} className="hidden md:block">
           <ul className="flex items-center gap-1">

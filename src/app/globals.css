@@ -126,6 +126,34 @@ body {
   animation-delay: 210ms;
 }
 
+/* Light and dark lockups. Class theme wins; the media query covers no-JS. */
+.logo-lockup {
+  display: inline-flex;
+  line-height: 0;
+}
+
+.logo-dark {
+  display: none;
+}
+
+html.dark .logo-light {
+  display: none;
+}
+
+html.dark .logo-dark {
+  display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.light) .logo-light {
+    display: none;
+  }
+
+  html:not(.light) .logo-dark {
+    display: block;
+  }
+}
+
 /*
  * Scroll reveal for sections below the hero. The attribute is set from JS only
  * when the user has not requested reduced motion, and these rules are also

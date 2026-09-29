@@ -1,4 +1,5 @@
-import { copyrightNotice, isPublicHttpUrl, navLinks, siteName, socialLinks, ui } from "@/content/site";
+import { Logo } from "@/components/logo";
+import { copyrightNotice, isPublicHttpUrl, navLinks, socialLinks, ui } from "@/content/site";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -8,9 +9,7 @@ export function Footer() {
     <footer className="border-t border-line">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-12 sm:px-8 md:flex-row md:items-end md:justify-between">
         <div>
-          <p className="font-mono text-[0.8125rem] font-medium tracking-[0.22em] text-ink">
-            {siteName}
-          </p>
+          <Logo variant="footer" />
           <p className="mt-3 text-sm text-muted">{copyrightNotice(year)}</p>
           {social.length > 0 ? (
             <ul aria-label={ui.socialNavLabel} className="mt-6 flex gap-2">
