@@ -164,9 +164,9 @@ function CaseDetails({
           {labels.result}
         </dt>
         <dd className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-2">
-          <span className="inline-flex h-6 items-center border border-line px-1.5 font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-accent-text">
+          {/* <span className="inline-flex h-6 items-center border border-line px-1.5 font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-accent-text">
             {labels.placeholder}
-          </span>
+          </span> */}
           <span className="font-mono text-sm text-ink">{result}</span>
         </dd>
       </div>

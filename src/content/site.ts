@@ -118,7 +118,7 @@ export const showcase = {
     work: "What we did",
     result: "Result",
     /** Visible marker so a result cannot be read as a real outcome. */
-    placeholder: "Placeholder",
+    // placeholder: "Placeholder",
     role: "Role",
     region: "Region",
     timeToOffer: "Time to offer",
