@@ -137,44 +137,74 @@ function StackGroupCard({ group, delayMs }: { group: StackGroup; delayMs: number
 
 function VisionAndMission() {
   return (
-    <div className="mt-20 grid gap-6 sm:mt-24 md:grid-cols-2 md:gap-8">
-      <StatementBlock
+    <div
+      id="about-vision-mission"
+      className="mt-20 grid gap-10 sm:mt-24 lg:grid-cols-2 lg:items-start lg:gap-x-12 lg:gap-y-16"
+    >
+      <StatementCopy
         id={about.vision.id}
         heading={about.vision.heading}
         statement={about.vision.statement}
         delayMs={40}
       />
-      <StatementBlock
+      <StatementPhoto image={about.vision.image} delayMs={80} />
+      <StatementCopy
         id={about.mission.id}
         heading={about.mission.heading}
         statement={about.mission.statement}
         delayMs={110}
+        className="lg:order-1"
       />
+      <StatementPhoto image={about.mission.image} delayMs={150} />
     </div>
   );
 }
 
-function StatementBlock({
+function StatementCopy({
   id,
   heading,
   statement,
   delayMs,
+  className,
 }: {
   id: string;
   heading: string;
   statement: string;
   delayMs: number;
+  className?: string;
 }) {
   const headingId = `${id}-heading`;
 
   return (
-    <Reveal delayMs={delayMs}>
-      <article aria-labelledby={headingId} className="border border-line p-8 sm:p-10">
+    <Reveal delayMs={delayMs} className={className}>
+      <article aria-labelledby={headingId}>
         <h3 id={headingId} className="text-2xl font-medium tracking-tight text-ink">
           {heading}
         </h3>
         <p className="mt-4 font-mono text-sm leading-6 text-ink">{statement}</p>
       </article>
+    </Reveal>
+  );
+}
+
+function StatementPhoto({
+  image,
+  delayMs,
+}: {
+  image: { src: string; alt: string };
+  delayMs: number;
+}) {
+  return (
+    <Reveal delayMs={delayMs}>
+      <div className="relative aspect-video overflow-hidden rounded-[0.7rem]">
+        <Image
+          src={image.src}
+          alt={image.alt}
+          fill
+          sizes="(min-width: 1024px) 34rem, 100vw"
+          className="about-statement-photo object-cover"
+        />
+      </div>
     </Reveal>
   );
 }

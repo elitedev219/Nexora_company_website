@@ -230,9 +230,9 @@ export const showcase = {
 
 /**
  * About section copy.
- * Team introduction, member details, vision, and mission were not provided.
+ * Team member names, roles, and bios were not provided.
  * Every TODO string is a placeholder for Anatolii to replace.
- * None of these values are real people, roles, bios, or company statements.
+ * None of these member values are real people, roles, or bios.
  */
 export const about = {
   id: "about",
@@ -379,12 +379,22 @@ export const about = {
   vision: {
     id: "about-vision",
     heading: "Vision",
-    statement: "A world where talent decides who gets hired, not geography or connections. We are building a small, senior, fully remote team that proves distributed work can be as reliable as anything done down the hall.",
+    statement:
+      "A world where talent decides who gets hired, not geography or connections. We are building a small, senior, fully remote team that proves distributed work can be as reliable as anything done down the hall.",
+    image: {
+      src: "/about/vision.jpg",
+      alt: "Three colleagues in separate sunlit rooms, each working at a desk with a laptop, seen through a row of windows.",
+    },
   },
   mission: {
     id: "about-mission",
     heading: "Mission",
-    statement: "We help developers land the roles they deserve and help AI platforms get work done to a standard they can trust. Whether we are running someone's job search or handling their account work, we treat it as if the outcome were our own.",
+    statement:
+      "We help developers land the roles they deserve and help AI platforms get work done to a standard they can trust. Whether we are running someone's job search or handling their account work, we treat it as if the outcome were our own.",
+    image: {
+      src: "/about/mission.jpg",
+      alt: "Two people at a wooden desk reviewing a printed page and a laptop together, one marking the page with a pencil.",
+    },
   },
 } as const;
 

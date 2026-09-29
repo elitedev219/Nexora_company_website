@@ -211,6 +211,15 @@ html.dark .about-team-photo {
   filter: none;
 }
 
+/* Vision and mission photos stay photographic in dark mode. */
+.about-statement-photo {
+  filter: none;
+}
+
+html.dark .about-statement-photo {
+  filter: none;
+}
+
 @media (min-width: 1024px) {
   .hero-cluster {
     display: flex;
