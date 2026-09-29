@@ -115,7 +115,7 @@ function useScrollReveal<T extends HTMLElement>(): RefObject<T | null> {
         if (wasPending) node.dataset.reveal = "shown";
         observer.disconnect();
       },
-      { threshold: 0.2 },
+      { threshold: 0.01 },
     );
 
     observer.observe(node);
