@@ -254,6 +254,116 @@ export const showcase = {
   },
 } as const;
 
+/**
+ * About section copy.
+ * Team introduction, member details, vision, and mission were not provided.
+ * Every TODO string is a placeholder for Anatolii to replace.
+ * None of these values are real people, roles, bios, or company statements.
+ */
+export const about = {
+  id: "about",
+  heading: "About",
+  team: {
+    id: "about-team",
+    heading: "Team",
+    /** TODO: Anatolii has not provided a team introduction. Replace this placeholder. Do not invent a company story. */
+    introduction: "TODO: team introduction",
+    /** Label for the empty photo slot. Not a caption of a person. */
+    photoPlaceholder: "Photo placeholder",
+    members: [
+      {
+        id: "member-1",
+        /** TODO: Anatolii will replace this team member's name. */
+        name: "TODO: name",
+        /** TODO: Anatolii will replace this team member's role. */
+        role: "TODO: role",
+        /** TODO: Anatolii will replace this team member's one-line bio. */
+        bio: "TODO: one-line bio",
+      },
+      {
+        id: "member-2",
+        /** TODO: Anatolii will replace this team member's name. */
+        name: "TODO: name",
+        /** TODO: Anatolii will replace this team member's role. */
+        role: "TODO: role",
+        /** TODO: Anatolii will replace this team member's one-line bio. */
+        bio: "TODO: one-line bio",
+      },
+      {
+        id: "member-3",
+        /** TODO: Anatolii will replace this team member's name. */
+        name: "TODO: name",
+        /** TODO: Anatolii will replace this team member's role. */
+        role: "TODO: role",
+        /** TODO: Anatolii will replace this team member's one-line bio. */
+        bio: "TODO: one-line bio",
+      },
+      {
+        id: "member-4",
+        /** TODO: Anatolii will replace this team member's name. */
+        name: "TODO: name",
+        /** TODO: Anatolii will replace this team member's role. */
+        role: "TODO: role",
+        /** TODO: Anatolii will replace this team member's one-line bio. */
+        bio: "TODO: one-line bio",
+      },
+    ],
+  },
+  stack: {
+    id: "about-stack",
+    heading: "Tech stack",
+    groups: [
+      {
+        id: "backend",
+        heading: "Backend",
+        tools: [
+          "Python",
+          "Django",
+          "Django REST Framework",
+          "PHP/Laravel",
+          "CodeIgniter",
+          "Node.js",
+        ],
+      },
+      {
+        id: "frontend",
+        heading: "Frontend",
+        tools: ["React", "Vue.js", "TypeScript", "Tailwind"],
+      },
+      {
+        id: "data-ai",
+        heading: "Data & AI",
+        /**
+         * TODO: Anatolii has not named Data & AI tools.
+         * Replace this single placeholder chip. Do not invent libraries or model names.
+         */
+        tools: ["TODO: tools"],
+      },
+      {
+        id: "cloud-devops",
+        heading: "Cloud & DevOps",
+        /**
+         * TODO: Anatolii has not named Cloud & DevOps tools.
+         * Replace this single placeholder chip. Do not invent AWS, Docker, or other tools.
+         */
+        tools: ["TODO: tools"],
+      },
+    ],
+  },
+  vision: {
+    id: "about-vision",
+    heading: "Vision",
+    /** TODO: Anatolii has not provided a vision statement. Replace this placeholder. Do not draft one. */
+    statement: "TODO: vision",
+  },
+  mission: {
+    id: "about-mission",
+    heading: "Mission",
+    /** TODO: Anatolii has not provided a mission statement. Replace this placeholder. Do not draft one. */
+    statement: "TODO: mission",
+  },
+} as const;
+
 export const areaServed = "United States";
 
 /**
