@@ -33,6 +33,23 @@ html.dark {
   --focus: #8ed4cf;
 }
 
+/*
+ * Services field only. #EFF2EA is the pale sage page wash sampled behind the
+ * reference headline. Cards use the light canvas so they sit on that field.
+ * These tokens stay on the light palette in dark mode so copy meets WCAG AA.
+ */
+#services {
+  background-color: #eff2ea;
+  color: var(--ink);
+  color-scheme: light;
+  --canvas: #f6f5f2;
+  --ink: #141716;
+  --muted: #3c4744;
+  --line: #d8d4cc;
+  --accent-text: #0c6e6a;
+  --focus: #0c6e6a;
+}
+
 /* No-JS fallback: follow the system theme until the init script sets .light or .dark. */
 @media (prefers-color-scheme: dark) {
   html:not(.light) {

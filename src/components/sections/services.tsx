@@ -25,7 +25,7 @@ export function Services() {
             <RevealItem
               key={item.title}
               delayMs={80 + index * 70}
-              className="border border-line p-8 sm:p-10"
+              className="border border-line bg-canvas p-8 sm:p-10"
             >
               <ServiceIcon name={item.icon} />
               <h3 className="mt-8 text-xl font-medium tracking-tight text-ink">
