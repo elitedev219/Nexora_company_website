@@ -50,6 +50,23 @@ html.dark {
   --focus: #0c6e6a;
 }
 
+/*
+ * About field only. #F3F3FF is the pale lavender page wash sampled behind the
+ * reference headline. These tokens stay on the light palette in dark mode so
+ * copy meets WCAG AA. The team video-call photo is not recolored.
+ */
+#about {
+  background-color: #f3f3ff;
+  color: var(--ink);
+  color-scheme: light;
+  --canvas: #f6f5f2;
+  --ink: #141716;
+  --muted: #3c4744;
+  --line: #d8d4cc;
+  --accent-text: #0c6e6a;
+  --focus: #0c6e6a;
+}
+
 /* No-JS fallback: follow the system theme until the init script sets .light or .dark. */
 @media (prefers-color-scheme: dark) {
   html:not(.light) {
