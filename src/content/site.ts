@@ -56,11 +56,51 @@ export const socialLinks: readonly {
   readonly href: string;
 }[] = [];
 
-/** Service types that may be named in structured data. These sections are not rendered yet. */
+/** Service types named in structured data and as the services card titles. */
 export const serviceTypes = [
   "AI Training Platform Support",
   "Remote Job Hunting Support",
 ] as const;
+
+/**
+ * TODO: Draft services sentences for Anatolii to replace.
+ * Each `description` array is the two drafted sentences for that card.
+ * Bullets stay inside the same specified scope.
+ */
+export const services = {
+  id: "services",
+  heading: "Services",
+  items: [
+    {
+      title: serviceTypes[0],
+      icon: "platform",
+      description: [
+        "Support covers onboarding and ramp-up for annotation and evaluation platforms.",
+        "It also covers task authoring, quality and rubric design, and throughput and acceptance-rate improvement.",
+      ],
+      points: [
+        "Onboarding and ramp-up for annotation and evaluation platforms",
+        "Task authoring",
+        "Quality and rubric design",
+        "Throughput and acceptance-rate improvement",
+      ],
+    },
+    {
+      title: serviceTypes[1],
+      icon: "search",
+      description: [
+        "Support covers resume and profile positioning for remote and US-based roles.",
+        "It also covers job sourcing and application tracking, interview preparation, and offer negotiation.",
+      ],
+      points: [
+        "Resume and profile positioning",
+        "Job sourcing and application tracking",
+        "Interview preparation",
+        "Offer negotiation for remote and US-based roles",
+      ],
+    },
+  ],
+} as const;
 
 export const areaServed = "United States";
 
