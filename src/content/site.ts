@@ -399,9 +399,18 @@ export const about = {
 } as const;
 
 /**
+ * Inbox that receives the Google Calendar invite for an intro call.
+ * The visitor creates the event in their own account. This site does not
+ * read that inbox or store the chosen time.
+ */
+export const meetingHostEmail = "techtonic.innov@gmail.com";
+
+/**
  * Contact section copy.
- * Email, Telegram, and the booking link were not provided.
- * TODO strings are placeholders. Do not invent addresses or a calendar URL.
+ * Public email and Telegram were not provided. Do not invent them.
+ * There is no Google Calendar appointment-schedule URL. When
+ * NEXT_PUBLIC_BOOKING_URL is unset, the contact section shows a time picker
+ * that opens a calendar template inviting the meeting host.
  */
 export const contact = {
   id: "contact",
@@ -410,8 +419,23 @@ export const contact = {
   booking: {
     heading: "Book a call",
     iframeTitle: "Google Calendar appointments",
-    /** Shown when NEXT_PUBLIC_BOOKING_URL is missing or not a real https URL. */
-    missing: "TODO: booking link",
+    hostEmail: meetingHostEmail,
+    eventTitle: "NEXORA intro call",
+    location: "Google Meet",
+    details: "This meeting is on Google Meet.",
+    constraints: "Weekdays, 30-minute start times.",
+    dateLabel: "Date",
+    timeLabel: "Start time",
+    timezone: "Times are shown in your timezone",
+    duration: "Each call is 30 minutes.",
+    chooseWeekday: "Choose a weekday.",
+    chooseTime: "Choose a start time",
+    chooseLaterTime: "Choose a later time.",
+    noTimesLeft: "No start times left on this date.",
+    openCalendar: "Open in Google Calendar",
+    opensNewTab: "opens in a new tab",
+    inviteNote: `You create this event in your Google account, which invites ${meetingHostEmail}.`,
+    noscript: "JavaScript is required to open Google Calendar with the time you choose.",
   },
   channels: {
     label: "Other ways to reach us",
@@ -510,7 +534,10 @@ export function isPublicHttpUrl(value: string): boolean {
   return true;
 }
 
-/** Google Calendar appointment URL from NEXT_PUBLIC_BOOKING_URL, or nothing. */
+/**
+ * Optional appointment-schedule URL from NEXT_PUBLIC_BOOKING_URL.
+ * Undefined means the contact section shows the time picker instead of an iframe.
+ */
 export function getBookingUrl(): string | undefined {
   const configured = process.env.NEXT_PUBLIC_BOOKING_URL?.trim() ?? "";
   if (!isPublicHttpUrl(configured)) return undefined;
