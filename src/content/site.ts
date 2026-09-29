@@ -127,20 +127,17 @@ export const showcase = {
     {
       id: "placements-made",
       label: "Placements made",
-      /** TODO: Anatolii will replace the placements-made metric. */
-      value: "TODO",
+      value: "25+",
     },
     {
       id: "platforms-supported",
       label: "Platforms supported",
-      /** TODO: Anatolii will replace the platforms-supported metric. */
-      value: "TODO",
+      value: "5+",
     },
     {
       id: "years-of-experience",
       label: "Years of experience",
-      /** TODO: Anatolii will replace the years-of-experience metric. */
-      value: "TODO",
+      value: "3+",
     },
   ],
   platformGroup: {
@@ -149,48 +146,34 @@ export const showcase = {
     /** Specified grouping. Not a description of work performed. */
     engagement: "AI training platform engagement",
     cards: [
+       {
+        id: "snorkel-ai",
+        name: "Snorkel AI",
+        context: "Snorkel AI needed expert-authored task packages and evaluation rubrics to benchmark frontier models on real professional work, and needed them produced at volume without losing quality.",
+        work: "Work on the Geranium product, Geranium Refinement, and Terminus 3 projects",
+        result: "Delivered across Geranium, Geranium Refinement, and Terminus 3",
+      },
       {
         id: "dataannotation",
         name: "DataAnnotation",
-        /** TODO: Anatolii will replace the context for the DataAnnotation engagement. */
-        context: "TODO",
-        /** TODO: Anatolii will replace what was done on the DataAnnotation engagement. */
-        work: "TODO",
-        /** TODO: Anatolii will replace the measurable result for the DataAnnotation engagement. */
-        result: "TODO",
+        context: "DataAnnotation needed skilled contributors to work across a wide mix of coding, writing, and evaluation projects, with consistent quality and fast turnaround on each one.",
+        work: "Handled hundreds of projects in the platform",
+        result: "Hundreds of projects delivered across coding, writing, and evaluation tasks with a consistently high quality rating.",
       },
-      {
-        id: "snorkel-ai",
-        name: "Snorkel AI",
-        /** TODO: Anatolii will replace the context for the Snorkel AI engagement. */
-        context: "TODO",
-        /** TODO: Anatolii will replace what was done on the Snorkel AI engagement. */
-        work: "TODO",
-        /** TODO: Anatolii will replace the measurable result for the Snorkel AI engagement. */
-        result: "TODO",
-      },
-      {
-        id: "platform-placeholder-1",
-        /** TODO: Anatolii will replace this platform name. */
-        name: "TODO: platform name",
-        /** TODO: Anatolii will replace the context for this platform engagement. */
-        context: "TODO",
-        /** TODO: Anatolii will replace what was done on this platform engagement. */
-        work: "TODO",
-        /** TODO: Anatolii will replace the measurable result for this platform engagement. */
-        result: "TODO",
-      },
-      {
-        id: "platform-placeholder-2",
-        /** TODO: Anatolii will replace this platform name. */
-        name: "TODO: platform name",
-        /** TODO: Anatolii will replace the context for this platform engagement. */
-        context: "TODO",
-        /** TODO: Anatolii will replace what was done on this platform engagement. */
-        work: "TODO",
-        /** TODO: Anatolii will replace the measurable result for this platform engagement. */
-        result: "TODO",
-      },
+      // {
+      //   id: "platform-placeholder-1",
+      //   name: "TODO: platform name",
+      //   context: "TODO",
+      //   work: "TODO",
+      //   result: "TODO",
+      // },
+      // {
+      //   id: "platform-placeholder-2",
+      //   name: "TODO: platform name",
+      //   context: "TODO",
+      //   work: "TODO",
+      //   result: "TODO",
+      // },
     ],
   },
   placementGroup: {
@@ -200,57 +183,34 @@ export const showcase = {
       {
         id: "us-market",
         market: "US market",
-        /** TODO: Anatolii will replace the client name for the US market placement. */
         name: "TODO: client name",
-        /** TODO: Anatolii will replace the role for the US market placement. */
         role: "TODO",
-        /** TODO: Anatolii will replace the region for the US market placement. */
         region: "TODO",
-        /** TODO: Anatolii will replace the time to offer for the US market placement. */
         timeToOffer: "TODO",
-        /** TODO: Anatolii will replace the context for the US market placement. */
         context: "TODO",
-        /** TODO: Anatolii will replace what was done for the US market placement. */
         work: "TODO",
-        /** TODO: Anatolii will replace the measurable result for the US market placement. */
         result: "TODO",
       },
       {
         id: "other-market-1",
-        /** TODO: Anatolii will replace this market name. */
         market: "TODO: market",
-        /** TODO: Anatolii will replace the client name for this placement. */
         name: "TODO: client name",
-        /** TODO: Anatolii will replace the role for this placement. */
         role: "TODO",
-        /** TODO: Anatolii will replace the region for this placement. */
         region: "TODO",
-        /** TODO: Anatolii will replace the time to offer for this placement. */
         timeToOffer: "TODO",
-        /** TODO: Anatolii will replace the context for this placement. */
         context: "TODO",
-        /** TODO: Anatolii will replace what was done for this placement. */
         work: "TODO",
-        /** TODO: Anatolii will replace the measurable result for this placement. */
         result: "TODO",
       },
       {
         id: "other-market-2",
-        /** TODO: Anatolii will replace this market name. */
         market: "TODO: market",
-        /** TODO: Anatolii will replace the client name for this placement. */
         name: "TODO: client name",
-        /** TODO: Anatolii will replace the role for this placement. */
         role: "TODO",
-        /** TODO: Anatolii will replace the region for this placement. */
         region: "TODO",
-        /** TODO: Anatolii will replace the time to offer for this placement. */
         timeToOffer: "TODO",
-        /** TODO: Anatolii will replace the context for this placement. */
         context: "TODO",
-        /** TODO: Anatolii will replace what was done for this placement. */
         work: "TODO",
-        /** TODO: Anatolii will replace the measurable result for this placement. */
         result: "TODO",
       },
     ],
@@ -276,38 +236,26 @@ export const about = {
     members: [
       {
         id: "member-1",
-        /** TODO: Anatolii will replace this team member's name. */
         name: "TODO: name",
-        /** TODO: Anatolii will replace this team member's role. */
         role: "TODO: role",
-        /** TODO: Anatolii will replace this team member's one-line bio. */
         bio: "TODO: one-line bio",
       },
       {
         id: "member-2",
-        /** TODO: Anatolii will replace this team member's name. */
         name: "TODO: name",
-        /** TODO: Anatolii will replace this team member's role. */
         role: "TODO: role",
-        /** TODO: Anatolii will replace this team member's one-line bio. */
         bio: "TODO: one-line bio",
       },
       {
         id: "member-3",
-        /** TODO: Anatolii will replace this team member's name. */
         name: "TODO: name",
-        /** TODO: Anatolii will replace this team member's role. */
         role: "TODO: role",
-        /** TODO: Anatolii will replace this team member's one-line bio. */
         bio: "TODO: one-line bio",
       },
       {
         id: "member-4",
-        /** TODO: Anatolii will replace this team member's name. */
         name: "TODO: name",
-        /** TODO: Anatolii will replace this team member's role. */
         role: "TODO: role",
-        /** TODO: Anatolii will replace this team member's one-line bio. */
         bio: "TODO: one-line bio",
       },
     ],
