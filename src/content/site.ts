@@ -84,6 +84,7 @@ export const services = {
         "Task authoring",
         "Quality and rubric design",
         "Throughput and acceptance-rate improvement",
+        "Handle tasks instead of the account owner 24/7",
       ],
     },
     {
@@ -97,6 +98,7 @@ export const services = {
         "Resume and profile positioning",
         "Job sourcing and application tracking",
         "Interview preparation",
+        "Live support on the technical interview session",
         "Offer negotiation for remote and US-based roles",
       ],
     },
