@@ -125,3 +125,19 @@ body {
 .rise-delay-3 {
   animation-delay: 210ms;
 }
+
+/*
+ * Scroll reveal for sections below the hero. The attribute is set from JS only
+ * when the user has not requested reduced motion, and these rules are also
+ * gated so a pending state cannot hide content in that case.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal="pending"] {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  [data-reveal="shown"] {
+    animation: rise 560ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
