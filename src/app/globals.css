@@ -280,6 +280,10 @@ html.dark .about-statement-photo {
   line-height: 0;
 }
 
+.logo-lockup img {
+  color: transparent;
+}
+
 .logo-dark {
   display: none;
 }
