@@ -9,7 +9,7 @@ import {
   socialLinks,
   ui,
 } from "@/content/site";
-import { realEmailAddress, realTelegramHref } from "@/lib/contact";
+import { realEmailAddress } from "@/lib/contact";
 import type { ReactNode } from "react";
 
 export function Footer() {
@@ -20,28 +20,10 @@ export function Footer() {
 
   return (
     <footer className="border-t border-line">
-      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-12 sm:px-8 md:flex-row md:items-start md:justify-between">
-        <div>
+      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-12 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:gap-6">
+        <div className="shrink-0">
           <Logo variant="footer" />
-          <p className="mt-3 text-sm text-muted">{copyrightNotice(year)}</p>
-          <ul aria-label={contact.channels.label} className="mt-6 flex list-none flex-col gap-1">
-            <li>
-              <ContactChannel
-                label={contact.channels.email.label}
-                text={email.text}
-                href={email.href}
-                icon={<EmailIcon />}
-              />
-            </li>
-            <li>
-              <ContactChannel
-                label={contact.channels.telegram.label}
-                text={telegram.text}
-                href={telegram.href}
-                icon={<TelegramIcon />}
-              />
-            </li>
-          </ul>
+          <p className="mt-2 text-sm text-muted">{copyrightNotice(year)}</p>
           {social.length > 0 ? (
             <ul aria-label={ui.socialNavLabel} className="mt-6 flex gap-2">
               {social.map((link) => (
@@ -60,13 +42,33 @@ export function Footer() {
             </ul>
           ) : null}
         </div>
-        <nav aria-label={ui.footerNavLabel}>
-          <ul className="flex flex-col gap-1 sm:flex-row sm:gap-2">
+        <ul
+          aria-label={contact.channels.label}
+          className="flex list-none flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-4"
+        >
+          <li>
+            <ContactChannel
+              label={contact.channels.email.label}
+              text={email.text}
+              href={email.href}
+              icon={<EmailIcon />}
+            />
+          </li>
+          <li>
+            <ContactChannel
+              label={contact.channels.telegram.label}
+              text={telegram.text}
+              icon={<TelegramIcon />}
+            />
+          </li>
+        </ul>
+        <nav aria-label={ui.footerNavLabel} className="shrink-0">
+          <ul className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:gap-1">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="inline-flex h-11 items-center text-sm text-ink underline-offset-4 hover:underline sm:px-3"
+                  className="inline-flex h-11 items-center text-sm text-ink underline-offset-4 hover:underline sm:px-2"
                 >
                   {link.label}
                 </a>
@@ -96,10 +98,9 @@ function footerEmail(): { text: string; href?: string } {
   return { text: value };
 }
 
-/** Same Telegram value as the contact section. Link only a real handle or t.me URL. */
-function footerTelegram(): { text: string; href?: string } {
-  const value = contact.channels.telegram.value;
-  return { text: value, href: realTelegramHref(value) };
+/** Phone number shown as text. It is not a Telegram username or t.me link. */
+function footerTelegram(): { text: string } {
+  return { text: contact.channels.telegram.value };
 }
 
 function ContactChannel({
@@ -118,7 +119,7 @@ function ContactChannel({
       {icon}
       <span className="min-w-0 text-left">
         <span className="block text-muted">{label}</span>
-        <span className="mt-0.5 block font-mono break-words text-ink">{text}</span>
+        <span className="mt-0.5 block whitespace-nowrap font-mono text-ink">{text}</span>
       </span>
     </>
   );
@@ -132,7 +133,7 @@ function ContactChannel({
   return (
     <a
       href={href}
-      className="inline-flex min-h-11 max-w-full items-center gap-3 py-1 text-sm underline-offset-4 hover:underline"
+      className="inline-flex min-h-11 max-w-full items-center gap-3 rounded-sm py-1 text-sm underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-focus"
     >
       {content}
     </a>

@@ -12,12 +12,6 @@ export const runtime = "nodejs";
 const NO_STORE = { "cache-control": "no-store" } as const;
 
 /**
- * TODO: Replace this sandbox sender after a domain is verified in Resend.
- * No sender domain was provided. Do not invent one.
- */
-const RESEND_FROM = "NEXORA <onboarding@resend.dev>";
-
-/**
  * Forwards a contact submission through Resend.
  * The message is not written to a database, file, or log.
  */
@@ -54,12 +48,13 @@ export async function POST(request: Request) {
 
   const apiKey = readSecret("RESEND_API_KEY");
   const to = realEmailAddress(process.env.CONTACT_TO_EMAIL ?? "");
-  if (!apiKey || !to) return failure(500);
+  const from = readFromAddress();
+  if (!apiKey || !to || !from) return failure(500);
 
   try {
     const resend = new Resend(apiKey);
     const result = await resend.emails.send({
-      from: RESEND_FROM,
+      from,
       to: [to],
       replyTo: value.email,
       subject: "NEXORA contact form",
@@ -77,6 +72,18 @@ export async function POST(request: Request) {
 function readSecret(name: string): string | undefined {
   const value = process.env[name]?.trim() ?? "";
   if (!value || /^todo\b/i.test(value) || /\s/.test(value)) return undefined;
+  return value;
+}
+
+/**
+ * Resend requires a from address on a domain verified in that account.
+ * No verified domain was provided, so a missing value is an error.
+ */
+function readFromAddress(): string | undefined {
+  const value = process.env.RESEND_FROM_EMAIL?.trim() ?? "";
+  if (!value || /^todo\b/i.test(value) || value.length > 320 || !value.includes("@")) {
+    return undefined;
+  }
   return value;
 }
 
