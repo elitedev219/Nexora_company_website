@@ -2,6 +2,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { SkipLink } from "@/components/skip-link";
 import { About } from "@/components/sections/about";
+import { Contact } from "@/components/sections/contact";
 import { Hero } from "@/components/sections/hero";
 import { Services } from "@/components/sections/services";
 import { Showcase } from "@/components/sections/showcase";
@@ -16,6 +17,7 @@ export default function HomePage() {
         <Services />
         <Showcase />
         <About />
+        <Contact />
       </main>
       <Footer />
     </>

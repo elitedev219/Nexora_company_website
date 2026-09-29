@@ -45,6 +45,7 @@ export const ui = {
   toggleTheme: "Toggle color theme",
   primaryNavLabel: "Primary",
   footerNavLabel: "Footer",
+  socialNavLabel: "Social",
 } as const;
 
 /**
@@ -364,6 +365,63 @@ export const about = {
   },
 } as const;
 
+/**
+ * Contact section copy.
+ * Email, Telegram, and the booking link were not provided.
+ * TODO strings are placeholders. Do not invent addresses or a calendar URL.
+ */
+export const contact = {
+  id: "contact",
+  heading: "Contact",
+  lead: "Book a call, or send a message.",
+  booking: {
+    heading: "Book a call",
+    iframeTitle: "Google Calendar appointments",
+    /** Shown when NEXT_PUBLIC_BOOKING_URL is missing or not a real https URL. */
+    missing: "TODO: booking link",
+  },
+  channels: {
+    label: "Other ways to reach us",
+    email: {
+      label: "Email",
+      /**
+       * TODO: Anatolii has not provided an email address.
+       * Render this as text. Do not use a mailto: link until the value is a real address.
+       */
+      value: "TODO: email",
+    },
+    telegram: {
+      label: "Telegram",
+      /**
+       * TODO: Anatolii has not provided a Telegram handle or URL.
+       * Render this as text. Do not use a t.me link until the value is a real address.
+       */
+      value: "TODO: telegram",
+    },
+  },
+  form: {
+    heading: "Send a message",
+    nameLabel: "Name",
+    emailLabel: "Email",
+    messageLabel: "Message",
+    required: "(required)",
+    submit: "Send message",
+    sending: "Sending…",
+    success: "Message sent.",
+    error: "The message could not be sent. Try again.",
+    noscript: "JavaScript is required to send this form.",
+    honeypotLabel: "Website",
+    errors: {
+      nameRequired: "Enter your name.",
+      nameLong: "Enter a shorter name.",
+      emailRequired: "Enter your email address.",
+      emailInvalid: "Enter a valid email address.",
+      messageRequired: "Enter a message.",
+      messageLong: "Enter a shorter message.",
+    },
+  },
+} as const;
+
 export const areaServed = "United States";
 
 /**
@@ -389,6 +447,41 @@ export function getSiteUrl(): string {
   const configured = process.env.NEXT_PUBLIC_SITE_URL?.trim();
   if (!configured) return LOCAL_DEV_SITE_URL;
   return configured.replace(/\/$/, "");
+}
+
+/** True for draft copy such as "TODO" or "TODO: email". */
+export function isPlaceholder(value: string): boolean {
+  const trimmed = value.trim();
+  return trimmed.length === 0 || /^todo\b/i.test(trimmed);
+}
+
+/**
+ * A real public https URL. Rejects empty values, TODO placeholders,
+ * and example.com so the page never embeds a fake calendar.
+ */
+export function isPublicHttpUrl(value: string): boolean {
+  const trimmed = value.trim();
+  if (isPlaceholder(trimmed)) return false;
+
+  let url: URL;
+  try {
+    url = new URL(trimmed);
+  } catch {
+    return false;
+  }
+
+  if (url.protocol !== "https:") return false;
+  const host = url.hostname.toLowerCase().replace(/\.$/, "");
+  if (host.length === 0 || host === "example.com" || host.endsWith(".example.com")) return false;
+  if (host === "localhost" || host.endsWith(".localhost")) return false;
+  return true;
+}
+
+/** Google Calendar appointment URL from NEXT_PUBLIC_BOOKING_URL, or nothing. */
+export function getBookingUrl(): string | undefined {
+  const configured = process.env.NEXT_PUBLIC_BOOKING_URL?.trim() ?? "";
+  if (!isPublicHttpUrl(configured)) return undefined;
+  return configured;
 }
 
 export function copyrightNotice(year: number): string {
