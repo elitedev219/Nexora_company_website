@@ -240,9 +240,7 @@ export const about = {
   team: {
     id: "about-team",
     heading: "Team",
-    /** TODO: Anatolii has not provided a team introduction. Replace this placeholder. Do not invent a company story. */
-    introduction: "TODO: team introduction",
-    /** Label for the empty photo slot. Not a caption of a person. */
+    introduction: "We are a remote team of five developers based in Japan, China, and Indonesia. We work across time zones that cover most of the business day, so work keeps moving while our clients sleep. We do two things. We support developers through the job hunt, from finding the right openings to tailoring applications, handling recruiter correspondence, and prepping for interviews. And we handle AI training platform accounts, taking on task authoring, evaluation, and annotation work at the quality bar those platforms expect.",
     photoPlaceholder: "Photo placeholder",
     members: [
       {
@@ -276,53 +274,117 @@ export const about = {
     heading: "Tech stack",
     groups: [
       {
+        id: "frontend",
+        heading: "Frontend",
+        tools: [
+          "React", 
+          "Angular",
+          "Vue.js", 
+          "TypeScript", 
+          "Tailwind", 
+          "Vuetify", 
+          "Zustand", 
+          "Redux", 
+          "Pinia", 
+          "TanStack Query"
+        ],
+      },
+      {
         id: "backend",
         heading: "Backend",
         tools: [
           "Python",
+          "FastAPI",
           "Django",
-          "Django REST Framework",
-          "PHP/Laravel",
+          "PHP",
+          "Laravel",
           "CodeIgniter",
           "Node.js",
+          "Go",
+          "Java",
+          "Java Spring Boot",
+          "Ruby on Rails",
+          ".NET",
+          "ASP.NET"
         ],
       },
       {
-        id: "frontend",
-        heading: "Frontend",
-        tools: ["React", "Vue.js", "TypeScript", "Tailwind"],
+        id: "database",
+        heading: "Database",
+        tools: [
+          "Postgres",
+          "MySQL",
+          "MariaDB",
+          "MongoDB",
+          "SQLAlchemy",
+          "Tortoise",
+          "Prisma",
+          "Redis",
+        ],
+      },
+      {
+        id: "mobile",
+        heading: "Mobile",
+        tools: [
+          "Kotlin",
+          "Dart",
+          "Swift",
+          "Android",
+          "React Native",
+          "Flutter",
+          "SwiftUI"
+        ],
       },
       {
         id: "data-ai",
         heading: "Data & AI",
-        /**
-         * TODO: Anatolii has not named Data & AI tools.
-         * Replace this single placeholder chip. Do not invent libraries or model names.
-         */
-        tools: ["TODO: tools"],
+        tools: [
+          "PyTorch", 
+          "Hugging Face",
+          "Transformers",
+          "scikit-learn",
+          "Airflow", 
+          "Dagster",
+          "Snowflake", 
+          "BigQuery",
+          "Databricks",
+          "Spark"
+        ],
       },
       {
         id: "cloud-devops",
         heading: "Cloud & DevOps",
-        /**
-         * TODO: Anatolii has not named Cloud & DevOps tools.
-         * Replace this single placeholder chip. Do not invent AWS, Docker, or other tools.
-         */
-        tools: ["TODO: tools"],
+        tools: [
+          "AWS", 
+          "Google Cloud",
+          "Azure",
+          "DigitalOcean", 
+          "Hetzner", 
+          "Railway", 
+          "Render",
+          "Docker", 
+          "Kubernetes",
+          "Terraform",
+          "GitHub Actions", 
+          "GitLab CI", 
+          "Jenkins",
+          "Prometheus",
+          "Grafana", 
+          "Datadog", 
+          "Sentry"
+        ],
       },
     ],
   },
   vision: {
     id: "about-vision",
     heading: "Vision",
-    /** TODO: Anatolii has not provided a vision statement. Replace this placeholder. Do not draft one. */
-    statement: "TODO: vision",
+    statement: "A world where talent decides who gets hired, not geography or connections. We are building a small, senior, fully remote team that proves distributed work can be as reliable as anything done down the hall.",
   },
   mission: {
     id: "about-mission",
     heading: "Mission",
-    /** TODO: Anatolii has not provided a mission statement. Replace this placeholder. Do not draft one. */
-    statement: "TODO: mission",
+    statement: "We help developers land the roles they deserve and help AI platforms get work done to a standard they can trust. Whether we are running someone's job search or handling their account work, we treat it as if the outcome were our own.",
   },
 } as const;
 

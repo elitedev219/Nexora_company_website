@@ -45,11 +45,11 @@ function Team() {
         </h3>
         <p className="mt-4 max-w-2xl font-mono text-sm leading-6 text-ink">{team.introduction}</p>
       </Reveal>
-      <ul className="mt-10 grid list-none gap-6 sm:grid-cols-2 sm:gap-8">
+      {/* <ul className="mt-10 grid list-none gap-6 sm:grid-cols-2 sm:gap-8">
         {team.members.map((member, index) => (
           <MemberCard key={member.id} member={member} delayMs={80 + index * 70} />
         ))}
-      </ul>
+      </ul> */}
     </section>
   );
 }
