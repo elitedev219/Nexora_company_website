@@ -181,7 +181,7 @@ export const showcase = {
     heading: "Job placement",
     cards: [
       {
-        id: "us-market",
+        id: "us-market-1",
         market: "US market",
         name: "Allstate",
         role: "Product Management Platform",
@@ -192,7 +192,7 @@ export const showcase = {
         result: "Offer accepted at Allstate within two months, now working on their product management platform team.",
       },
       {
-        id: "us-market",
+        id: "us-market-2",
         market: "US market",
         name: "Kiewit",
         role: "Sr Data Engineer",
