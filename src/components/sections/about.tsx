@@ -1,6 +1,7 @@
 "use client";
 
 import { about } from "@/content/site";
+import Image from "next/image";
 import { useEffect, useId, useRef, type CSSProperties, type ReactNode, type RefObject } from "react";
 
 type Member = (typeof about.team.members)[number];
@@ -43,7 +44,18 @@ function Team() {
         <h3 id={headingId} className="text-2xl font-medium tracking-tight text-ink">
           {team.heading}
         </h3>
-        <p className="mt-4 max-w-2xl font-mono text-sm leading-6 text-ink">{team.introduction}</p>
+        <div className="mt-4 grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
+          <p className="font-mono text-sm leading-6 text-ink">{team.introduction}</p>
+          <div className="relative aspect-video overflow-hidden rounded-[0.7rem]">
+            <Image
+              src="/about/team-call.jpg"
+              alt="Five teammates in a video call discussing a project."
+              fill
+              sizes="(min-width: 1024px) 34rem, 100vw"
+              className="about-team-photo object-cover"
+            />
+          </div>
+        </div>
       </Reveal>
       {/* <ul className="mt-10 grid list-none gap-6 sm:grid-cols-2 sm:gap-8">
         {team.members.map((member, index) => (
