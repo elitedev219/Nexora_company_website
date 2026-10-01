@@ -20,7 +20,7 @@ export function Services() {
             {services.heading}
           </h2>
         </Reveal>
-        <ul className="mt-14 grid list-none gap-6 md:grid-cols-2 md:gap-8">
+        <ul className="mt-14 grid list-none gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
           {services.items.map((item, index) => (
             <RevealItem
               key={item.title}
@@ -59,7 +59,8 @@ export function Services() {
 
 function ServiceIcon({ name }: { name: (typeof services.items)[number]["icon"] }) {
   if (name === "platform") return <PlatformIcon />;
-  return <SearchIcon />;
+  if (name === "search") return <SearchIcon />;
+  return <FreelanceIcon />;
 }
 
 function PlatformIcon() {
@@ -91,6 +92,23 @@ function SearchIcon() {
       <rect x="5" y="6" width="12" height="16" />
       <path d="M8 11h6M8 15h5M8 19h4" />
       <path d="M20 12h7M20 16h6M20 20h4" />
+    </svg>
+  );
+}
+
+function FreelanceIcon() {
+  return (
+    <svg
+      viewBox="0 0 32 32"
+      aria-hidden="true"
+      className="size-8 text-accent-text"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+    >
+      <rect x="6" y="13" width="20" height="12" />
+      <path d="M12 13V10h8v3" />
+      <path d="M6 18h20" />
     </svg>
   );
 }

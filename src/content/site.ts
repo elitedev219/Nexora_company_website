@@ -61,6 +61,7 @@ export const socialLinks: readonly {
 export const serviceTypes = [
   "AI Training Platform Support",
   "Remote Job Hunting Support",
+  "Freelancing",
 ] as const;
 
 /**
@@ -100,6 +101,20 @@ export const services = {
         "Interview preparation",
         "Live support on the technical interview session",
         "Offer negotiation for remote and US-based roles",
+      ],
+    },
+    {
+      title: serviceTypes[2],
+      icon: "freelance",
+      description: [
+        "Support covers finding clients and positioning for freelance work.",
+        "It also covers proposals and remote delivery.",
+      ],
+      points: [
+        "Finding clients",
+        "Positioning",
+        "Proposals",
+        "Remote delivery",
       ],
     },
   ],
